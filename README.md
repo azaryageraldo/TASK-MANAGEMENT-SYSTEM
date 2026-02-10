@@ -1,103 +1,105 @@
 # Task Management System
 
-Fullstack Application developed as a recruitment test for **NEXA**.
+Aplikasi Fullstack Task Management System yang dibangun sebagai submission tes rekrutmen **NEXA**. Aplikasi ini membantu pengguna mengelola tugas harian dengan fitur CRUD, filter, sorting, dan UI modern.
 
-## Tech Stack
+![Dashboard Screenshot](screenshots/dashboard.png)
 
-- **Backend:** Laravel 11, PHP 8.4
-- **Frontend:** React, Vite, TailwindCSS
-- **Database:** MySQL
-- **Auth:** JWT (JSON Web Token)
+## 🚀 Fitur Utama
 
-## Features
+- **Autentikasi Pengguna**: Login & Register aman dengan JWT dan Bcrypt.
+- **Manajemen Tugas**: Create, Read, Update, Delete (CRUD) tugas.
+- **Filter & Sorting**: Filter berdasarkan status (To Do, In Progress, Done) dan urutkan berdasarkan deadline.
+- **UI Modern**: Desain responsif menggunakan TailwindCSS dengan sentuhan Glassmorphism.
+- **Feedback Interaktif**: Notifikasi Toast dan Modal konfirmasi kustom.
 
-- User Authentication (Register, Login, Logout)
-- Task Management (Create, Read, Update, Delete)
-- Filter Tasks by Status (To Do, In Progress, Done)
-- Sort Tasks by Deadline
-- Responsive UI
+## 🛠️ Teknologi yang Digunakan
 
-## Project Structure
+### Backend
 
-- `backend/` - Laravel API
-- `frontend/` - React Client
-- `db.sql` - Database Dump (Not included, run migrations)
-
-## Setup Instructions
-
-### Docker (Recommended)
-
-1. Make sure you have Docker and Docker Compose installed.
-2. Run the application:
-   ```bash
-   docker-compose up --build
-   ```
-3. Open http://localhost:5173 for Frontend.
-4. Open http://localhost:8000 for Backend status.
-
-Note: You might need to run migrations manually if the backend starts before the database is ready:
-
-```bash
-docker-compose exec backend php artisan migrate
-```
-
-### Backend (Manual)
-
-1. Navigate to backend directory:
-   ```bash
-   cd backend
-   ```
-2. Install dependencies:
-   ```bash
-   composer install
-   ```
-3. Copy `.env` file:
-   ```bash
-   cp .env.example .env
-   ```
-4. Configure database in `.env`:
-   - DB_DATABASE=task_management_system
-   - DB_USERNAME=azaryageraldo
-   - DB_PASSWORD=anes0709
-5. Generate app key:
-   ```bash
-   php artisan key:generate
-   ```
-6. Generate JWT secret:
-   ```bash
-   php artisan jwt:secret
-   ```
-7. Run migrations:
-   ```bash
-   php artisan migrate
-   ```
-8. Start server:
-   ```bash
-   php artisan serve
-   ```
+- **Framework**: Laravel 12
+- **Language**: PHP 8.2+
+- **Auth**: JWT-Auth (`php-open-source-saver/jwt-auth`)
+- **Database**: MySQL
 
 ### Frontend
 
-1. Navigate to frontend directory:
+- **Framework**: React.js (Vite)
+- **Styling**: TailwindCSS v4
+- **Icons**: Lucide React
+- **HTTP Client**: Axios
+
+## 📦 Langkah Menjalankan Aplikasi
+
+### Opsi 1: Menggunakan Docker (Recommended)
+
+Pastikan Docker dan Docker Compose sudah terinstall.
+
+1. Jalankan perintah berikut di root project:
    ```bash
-   cd frontend
+   docker-compose up --build
    ```
-2. Install dependencies:
+2. Aplikasi Frontend dapat diakses di: [http://localhost:5173](http://localhost:5173)
+3. Aplikasi Backend berjalan di: [http://localhost:8000](http://localhost:8000)
+
+_Catatan: Jika backend error saat pertama kali jalan, jalankan migrasi manual:_
+
+```bash
+docker-compose exec backend php artisan migrate --seed
+```
+
+### Opsi 2: Menjalankan Manual
+
+#### Backend Setup
+
+1. Masuk ke folder backend: `cd backend`
+2. Install dependencies: `composer install`
+3. Setup environment:
    ```bash
-   npm install
+   cp .env.example .env
+   # Edit .env sesuaikan DB_DATABASE=task_management_system, DB_USERNAME, DB_PASSWORD
    ```
-3. Start dev server:
+4. Generate Key & JWT Secret:
    ```bash
-   npm run dev
+   php artisan key:generate
+   php artisan jwt:secret
    ```
-4. Open http://localhost:5173
+5. Jalankan Migrasi & Seeder:
+   ```bash
+   php artisan migrate --seed
+   ```
+6. Jalankan Server: `php artisan serve`
 
-## API Documentation
+#### Frontend Setup
 
-See `postman_collection.json` (to be added) or check `backend/routes/api.php`.
+1. Masuk ke folder frontend: `cd frontend`
+2. Install dependencies: `npm install`
+3. Jalankan development server: `npm run dev`
 
-## Dummy Account
+## 👤 Informasi Login Dummy
 
-- **Email:** user@example.com
-- **Username:** user123
-- **Password:** password123
+Gunakan akun berikut untuk login (Data dari DatabaseSeeder):
+
+- **Username**: `admin`
+- **Email**: `admin@gmail.com`
+- **Password**: `dsadsadsa`
+
+## 🗄️ Struktur Database
+
+Database schema dapat dilihat di file `db.sql` atau melalui migrasi Laravel. Tabel utama:
+
+- **users**: Menyimpan data pengguna.
+- **tasks**: Menyimpan data tugas (judul, deskripsi, status, deadline).
+
+## 📸 Screenshots
+
+| Login                           | Dashboard                               |
+| ------------------------------- | --------------------------------------- |
+| ![Login](screenshots/login.png) | ![Dashboard](screenshots/dashboard.png) |
+
+| Create Task                       | Delete Confirmation               |
+| --------------------------------- | --------------------------------- |
+| ![Create](screenshots/create.png) | ![Delete](screenshots/delete.png) |
+
+---
+
+**Author**: Azarya Geraldo
