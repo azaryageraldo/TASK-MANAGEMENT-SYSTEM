@@ -96,9 +96,13 @@ Database schema dapat dilihat di file `db.sql` atau melalui migrasi Laravel. Tab
 | ------------------------------- | --------------------------------------- |
 | ![Login](screenshots/login.png) | ![Dashboard](screenshots/dashboard.png) |
 
-| Create Task                       | Delete Confirmation               |
-| --------------------------------- | --------------------------------- |
-| ![Create](screenshots/create.png) | ![Delete](screenshots/delete.png) |
+| Register                              | Create Task                       |
+| ------------------------------------- | --------------------------------- |
+| ![Register](screenshots/register.png) | ![Create](screenshots/create.png) |
+
+| Edit Task                     | Delete Confirmation               |
+| ----------------------------- | --------------------------------- |
+| ![Edit](screenshots/edit.png) | ![Delete](screenshots/delete.png) |
 
 ---
 
