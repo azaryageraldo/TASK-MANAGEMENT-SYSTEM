@@ -1,0 +1,40 @@
+# Global
+.DS_Store
+.vscode/
+.idea/
+*.log
+
+# Backend (Laravel)
+backend/vendor/
+backend/node_modules/
+backend/npm-debug.log
+backend/yarn-error.log
+backend/.env
+backend/.env.backup
+backend/.phpunit.result.cache
+backend/storage/*.key
+backend/public/storage
+backend/public/hot
+backend/storage/debugbar/
+backend/storage/framework/views/*
+backend/storage/logs/*
+!backend/storage/framework/views/.gitignore
+!backend/storage/logs/.gitignore
+
+# Frontend (React)
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+frontend/.env.local
+frontend/npm-debug.log
+frontend/yarn-error.log
+frontend/package-lock.json
+
+# Docker
+docker-data/
+
+# Screenshots (Allow user to add them, do not ignore if we want them tracked, but usually binary files are okay)
+# screenshots/
+
+# Keep db.sql as per requirement
+!db.sql
