@@ -1,6 +1,6 @@
 # Task Management System
 
-Aplikasi Fullstack Task Management System yang dibangun sebagai submission tes rekrutmen **NEXA**. Aplikasi ini membantu pengguna mengelola tugas harian dengan fitur CRUD, filter, sorting, dan UI modern.
+Aplikasi Fullstack Task Management System yang dibangun sebagai bagian dari proses technical assessment. Aplikasi ini membantu pengguna mengelola tugas harian dengan fitur CRUD, filter, sorting, dan UI modern.
 
 ![Dashboard Screenshot](screenshots/dashboard.png)
 
